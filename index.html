@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wolf & Raven Beard Co.</title>
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bd-coming-soon.css">
+</head>
+
+<body class="min-vh-100 d-flex flex-column text-center mt-5">
+    <main class="my-auto">
+        <div class="container">
+            <img src="assets/images/logo-v2.png" alt="logo" width="500">
+            <hr style="background: white; height: 5px; margin: 30px 0 5px;" />
+            <h1 class="page-title">We're are coming soon...</h1>
+            <p class="page-description mb-5">Nearly there! We are working hard to bring you the very best beard products.</p>
+            <div id="form-status" class="alert alert-success d-none"><p class="m-0 p-0">Thank you! We'll be in touch soon.</p></div>
+            <form id="form" action="https://formspree.io/f/myyorrar" method="POST">
+                <label for="email">Find out when we're live</label>
+                <input class="form-control mb-3" name="email" id="email" type="email" placeholder="Email Address..." required style="width: 64%; margin: 0 auto;">
+                <button class="col-2 btn btn-danger mb-5" type="submit">Get Notified</button>
+            </form>
+            <h2 class="page-title">Can't wait?</h2>
+            <p>Email our sales team <a href="mailto:sales@wolfandravenbeardco.co.uk" class="navbar-text d-none d-sm-inline-block">sales@wolfandravenbeardco.co.uk</a></p>
+            <p>Stay connected</p>
+            <nav class="footer-social-links">
+                <a href="https://www.instagram.com/wolfandravenbeardco/" class="social-link"><i class="mdi mdi-instagram"></i></a>
+                <a href="https://www.facebook.com/wolfandravenbeardco" class="social-link"><i class="mdi mdi-facebook-box"></i></a>
+                <a href="https://twitter.com/wolfandravenltd" class="social-link"><i class="mdi mdi-twitter"></i></a>
+            </nav>
+        </div>
+    </main>
+</body>
+
+<script>
+  var form = document.getElementById("form");
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    var status = document.getElementById("form-status");
+    var data = new FormData(event.target);
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        status.classList.toggle("d-none")
+        form.reset()
+      } else {
+        response.json().then(data => {
+          if (Object.hasOwn(data, 'errors')) {
+            status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+          } else {
+            status.innerHTML = "Oops! There was a problem submitting your form"
+          }
+        })
+      }
+    }).catch(error => {
+      status.innerHTML = "Oops! There was a problem submitting your form"
+    });
+  }
+  form.addEventListener("submit", handleSubmit)
+</script>
+
+</html>
