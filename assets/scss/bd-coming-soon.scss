@@ -12,16 +12,19 @@ body {
     }
 }
 
+#logo {
+    width: 50%;
+    @media (max-width: 768px) {
+        width: 80%;
+    }
+}
+
 .navbar {
     display: block;
 }
 
 .navbar-brand {
     margin-right: 0;
-
-    img {
-        height: 21px;
-    }
 }
 .navbar-dark {
     padding-top: 35px;

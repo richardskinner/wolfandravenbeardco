@@ -10,13 +10,17 @@ body {
     body {
       padding-bottom: 110px; } }
 
+#logo {
+  width: 50%; }
+  @media (max-width: 768px) {
+    #logo {
+      width: 80%; } }
+
 .navbar {
   display: block; }
 
 .navbar-brand {
   margin-right: 0; }
-  .navbar-brand img {
-    height: 21px; }
 
 .navbar-dark {
   padding-top: 35px;

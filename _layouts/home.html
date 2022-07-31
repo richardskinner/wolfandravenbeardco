@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Wolf & Raven Beard Co.</title>
-    <link rel="icon" type="type/png" href="favicon.png" />
+    <link rel="icon" type="type/png" href="favicon.png"/>
     <link href="//fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -16,26 +16,39 @@
 <body class="min-vh-100 d-flex flex-column text-center mt-5">
 <main class="my-auto">
     <div class="container">
-        <img src="assets/images/logo-v2.png" alt="logo" width="500">
-        <hr style="background: white; height: 5px; margin: 30px 0 5px;" />
+        <img id="logo" src="assets/images/logo-v2.png" alt="logo">
+        <hr style="background: white; height: 5px; margin: 30px 0 5px;"/>
         <h1 class="page-title">We're are coming soon...</h1>
-        <p class="page-description mb-5">Nearly there! We are working hard to bring you the very best beard products.</p>
-        <div id="form-status" class="alert alert-success d-none"><p class="m-0 p-0">Thank you! We'll be in touch soon.</p></div>
-        <form id="form" action="https://formspree.io/f/myyorrar" method="POST">
-            <label for="email">Find out when we're live</label>
-            <input class="form-control mb-3" name="email" id="email" type="email" placeholder="Email Address..." required style="width: 64%; margin: 0 auto;">
-            <button class="col-2 btn btn-danger mb-5" type="submit">Get Notified</button>
-        </form>
+        <p class="page-description mb-5">Nearly there! We are working hard to bring you the very best beard
+            products.</p>
+        <div id="form-status" class="alert alert-success d-none">
+            <p class="m-0 p-0">Thank you! We'll be in touch
+                soon.</p>
+        </div>
+        <div class="row">
+            <form id="form" class="col-sm-12 col-md-8 col-lg-8 m-auto" action="https://formspree.io/f/myyorrar" method="POST">
+                <div class="form-group">
+                    <label for="email">Find out when we're live</label>
+                    <input class="form-control mb-3" name="email" id="email" type="email"
+                           placeholder="Email Address..." required>
+                    <button class="col-sm-2 col-md-2 col-lg-2 btn btn-danger mb-5 m-auto" type="submit">Get Notified
+                    </button>
+                </div>
+            </form>
+        </div>
         <h2 class="page-title">Can't wait?</h2>
         <p>Email our sales team
-            <a href="mailto:sales@wolfandravenbeardco.co.uk" class="text-white text-underline d-none d-sm-inline-block "><u>sales@wolfandravenbeardco.co.uk</u></a>
+            <a href="mailto:sales@wolfandravenbeardco.co.uk"
+               class="text-white text-underline d-none d-sm-inline-block "><u>sales@wolfandravenbeardco.co.uk</u></a>
         </p>
         <p>Stay connected</p>
         <nav class="footer-social-links">
             <a href="//www.instagram.com/wolfandravenbeardco/" class="social-link"><i class="mdi mdi-instagram"></i></a>
-            <a href="//www.facebook.com/wolfandravenbeardco" class="social-link"><i class="mdi mdi-facebook-box"></i></a>
+            <a href="//www.facebook.com/wolfandravenbeardco" class="social-link"><i
+                    class="mdi mdi-facebook-box"></i></a>
             <a href="//twitter.com/wolfandravenltd" class="social-link"><i class="mdi mdi-twitter"></i></a>
         </nav>
+
     </div>
 </main>
 </body>
@@ -70,6 +83,7 @@
       status.innerHTML = "Oops! There was a problem submitting your form"
     });
   }
+
   form.addEventListener("submit", handleSubmit)
 </script>
 
@@ -77,7 +91,11 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XC0W9M1T3S"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
   gtag('js', new Date());
 
   gtag('config', 'G-XC0W9M1T3S');
